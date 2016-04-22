@@ -10,6 +10,7 @@ run:
 	@make numix
 	@make spotify
 	@make docker
+	@make vim
 	@make dnsmasq
 	@make startup
 	@make latex
@@ -31,7 +32,6 @@ apport:
 	sudo sed -i s/enabled=1/enabled=0/g /etc/default/apport
 
 utilities:
-	sudo apt-get install -y vim
 	sudo apt-get install -y keepassx
 	sudo apt-get install -y vlc
 	sudo apt-get install -y gparted
@@ -44,6 +44,11 @@ utilities:
 	sudo apt-get install -y thunderbird
 	sudo apt-get install -y openjdk-8-jre
 	sudo apt-get install -y livestreamer
+	
+vim:
+        sudo apt-get install -y vim
+        dconf read /org/gnome/desktop/input-sources/xkb-options
+        dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
 
 git:
 	sudo apt-get install -y git

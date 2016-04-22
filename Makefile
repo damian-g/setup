@@ -31,6 +31,7 @@ apport:
 	sudo sed -i s/enabled=1/enabled=0/g /etc/default/apport
 
 utilities:
+	sudo apt-get install -y vim
 	sudo apt-get install -y keepassx
 	sudo apt-get install -y vlc
 	sudo apt-get install -y gparted

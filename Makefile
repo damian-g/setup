@@ -8,9 +8,12 @@ run:
 	@make utilities
 	@make apport
 	@make numix
+	@make phpstorm
 	@make spotify
 	@make docker
 	@make vim
+	@make phpstorm
+	@make git-lfs
 	@make dnsmasq
 	@make startup
 	@make latex
@@ -44,17 +47,30 @@ utilities:
 	sudo apt-get install -y thunderbird
 	sudo apt-get install -y openjdk-8-jre
 	sudo apt-get install -y livestreamer
+	sudo apt-get install -y filezilla
 	
-vim:
-        sudo apt-get install -y vim
-        dconf read /org/gnome/desktop/input-sources/xkb-options
-        dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
-
 git:
 	sudo apt-get install -y git
 	git config --global log.abbrevCommit yes
 	git config --global core.abbrev 8
 	git config --global core.fileMode false
+
+git-lfs:
+	curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+
+vim:
+	sudo apt-get install -y vim
+	dconf read /org/gnome/desktop/input-sources/xkb-options
+	dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
+
+phpstorm:
+	wget -O PhpStorm.tar.gz https://download.jetbrains.com/webide/PhpStorm-2016.1.tar.gz
+	mkdir PhpStorm
+	tar -C PhpStorm -xvf PhpStorm.tar.gz
+	sudo rm -fr /usr/local/bin/PhpStorm
+	sudo mv PhpStorm/*/ /usr/local/bin/PhpStorm
+	rm -rf PhpStorm.tar.gz PhpStorm
+	sh /usr/local/bin/PhpStorm/bin/phpstorm.sh
 
 latex:
 	sudo apt-get install -y texlive-full

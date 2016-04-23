@@ -48,6 +48,7 @@ utilities:
 	sudo apt-get install -y openjdk-8-jre
 	sudo apt-get install -y livestreamer
 	sudo apt-get install -y filezilla
+	sudo apt-get install -y gimp
 	
 git:
 	sudo apt-get install -y git

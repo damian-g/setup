@@ -12,7 +12,6 @@ run:
 	@make spotify
 	@make docker
 	@make vim
-	@make phpstorm
 	@make git-lfs
 	@make dnsmasq
 	@make startup

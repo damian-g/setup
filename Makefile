@@ -64,7 +64,7 @@ vim:
 	dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
 
 phpstorm:
-	wget -O PhpStorm.tar.gz https://download.jetbrains.com/webide/PhpStorm-2016.1.tar.gz
+	wget -O PhpStorm.tar.gz https://download.jetbrains.com/webide/PhpStorm-2016.2.tar.gz
 	mkdir PhpStorm
 	tar -C PhpStorm -xvf PhpStorm.tar.gz
 	sudo rm -fr /usr/local/bin/PhpStorm

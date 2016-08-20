@@ -21,7 +21,7 @@ run:
 docker:
 	wget -qO- https://get.docker.com/ | sh
 	sudo usermod -aG docker $(USER)
-	sudo sh -c "curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-$(KERNEL)-$(MACHINE) > /usr/local/bin/docker-compose"
+	sudo sh -c "curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-$(KERNEL)-$(MACHINE) > /usr/local/bin/docker-compose"
 	sudo chmod +x /usr/local/bin/docker-compose
 
 numix:
